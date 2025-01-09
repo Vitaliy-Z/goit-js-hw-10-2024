@@ -30,6 +30,9 @@ function onClose([selectedDate]) {
     userSelectedDate = selectedDate.getTime();
     startBtnEl.disabled = false;
   } else {
+    userSelectedDate = 0;
+    updateTimerEl(convertMs(0));
+
     iziToast.error({
       title: 'Invalid',
       message: 'Please choose a date in the future',
